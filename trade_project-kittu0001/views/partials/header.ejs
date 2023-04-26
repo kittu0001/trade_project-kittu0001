@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Hub</title>
+    <link rel="icon" href="../../public/img/logo.jpg" >
+    <link rel="stylesheet" href="/public/CSS/index.css">
+    <script src="https://kit.fontawesome.com/c03ec31dc2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <users>        
+        <!-- <a href="/"><img class="imgSelect" src="../../public/images/logo.jpeg" alt="Logo"></a> -->
+        <a href="/"><img class="imgSelect" src="../../public/img/logo.jpg" alt="logo"></a>
+        <ul class="users-bar">            
+            <%if(!user) {%>
+                <li><a href="/users/login"> Login </a></li>
+            <li><a href="/users/new">Signup</a></li>
+            <%} else {%>
+                <li><a href='/../trades/new'>Start Trading</a></li>
+                <li><a href='/users/profile'>Profile</a></li>
+                <li><a href="/users/logout">Logout</a></li>
+            <%}%>
+        </ul>
+        <hr>
+        <a class="tradesLink" href="/">Home</a>
+        <a class="tradesLink" href="/trades">Trades</a>
+        <!-- <a class="tradesLink" href="/users/profile">Profile</a> -->
+        
+    </users>
+    <% if(errorMessages.length > 0) {%>
+        <% errorMessages.forEach(message=>{%>
+            <div class='error'>
+                <%=message%>
+            </div>
+            <%});%>
+                <%}%>
+    
+                    <% if(successMessages.length > 0) {%>
+    
+                        <% successMessages.forEach(message=>{%>
+                            <div class='success'>
+                                <%=message%>
+                            </div>
+                            <%});%>
+                                <%}%>
+
+    
